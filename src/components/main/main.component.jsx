@@ -11,6 +11,8 @@ const API_KEY = "3352729149c73266f5d23bbd95bca84d";
 
 const Main = () => {
 
+    const [weather, setWeather] = useState();
+
     const api_call = async e =>{
 
         e.preventDefault();
@@ -19,7 +21,7 @@ const Main = () => {
         
         const request = Axios.get(url);
         const response = await request;
-        console.log(response);
+        setWeather(response);
 
     }
 
