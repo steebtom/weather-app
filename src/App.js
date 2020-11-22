@@ -1,9 +1,13 @@
-import React from "react"
- 
-const App = () => {
-  return (
-    <h1>Hello!</h1>
-  )
-}
+import React from 'react';
+import Wrapper from '../src/components/wrapper/wrapper.component';
+import Main from '../src/components/main/main.component';
 
-export default App
+const App = () => {
+	return (
+		<Wrapper>
+			<Main />
+		</Wrapper>
+	);
+};
+
+export default App;
