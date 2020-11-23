@@ -23,7 +23,7 @@ const Main = () => {
 
         e.preventDefault();
         const location= e.target.elements.location.value;
-        if(!location) setError("Please enter the name of a city"), setWeather(null);
+        if(!location) return setError("Please enter the name of a city"), setWeather(null);
 
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}&units=metric`;
         
