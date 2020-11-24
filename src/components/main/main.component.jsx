@@ -8,6 +8,7 @@ import Content from "../content/content.component";
 import Weathersearch from "../weathersearch/weathersearch.component";
 import Weatherdata from "../weatherdata/weatherdata.component";
 import Error from "../error/error.component";
+import Datetime from "../datetime/datetime.component"
 
 
 const API_KEY = "3352729149c73266f5d23bbd95bca84d";
@@ -31,6 +32,7 @@ const Main = () => {
         const response = await request;
         setWeather(response.data.main);
         setCity(response.data.name);
+        setError(null);
 
     }
     weather && console.log(weather);
@@ -40,6 +42,7 @@ const Main = () => {
         <div className="main">
             <Header/>
             <Content>
+                <Datetime/>
                 <Context.Provider value={{ api_call, weather, city }} >
                     <Weathersearch/>
                     { weather && <Weatherdata/> }
